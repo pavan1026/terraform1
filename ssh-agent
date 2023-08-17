@@ -1,0 +1,26 @@
+1. Using a Mac or Linux Client Computer
+
+Configuring the SSH agent on a Mac:
+
+Run the following command:
+
+ssh-add -K myPrivateKey.pem
+
+
+
+ssh-add -L myPrivateKey.pem
+
+
+Connect to the bastion host from Mac/Linux:
+
+You can now ssh into the EC2 instance bastion host by issuing the following command:
+
+ssh –A ec2-user@<bastion-IP-address or DNS-entry>
+
+Connect to the private instances from the bastion host:
+
+Now that you’ve used agent forwarding you can simply connect to any instance that is using the same key pair by simply issuing the following command:
+
+ssh ec2-user@<instance-IP-address or DNS-entry>
+
+
